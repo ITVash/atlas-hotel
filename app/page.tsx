@@ -195,97 +195,111 @@ const Hero = () => {
   const titleWords = "Атлас Донецк".split(" ");
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Video with Parallax */}
-      <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-full">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="w-full h-full object-cover"
-          src="/bg-video.mp4"
-        />
-        <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
-      </motion.div>
+		<section className='relative h-screen w-full overflow-hidden flex items-center justify-center'>
+			{/* Background Video with Parallax */}
+			<motion.div
+				style={{ y, scale }}
+				className='absolute inset-0 w-full h-full'>
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					className='w-full h-full object-cover'
+					src='/bg-video.webm'
+				/>
+				<div className='absolute inset-0 bg-black/40 bg-gradient-to-b from-black/20 via-transparent to-black/60' />
+			</motion.div>
 
-      <div className="container relative z-10 px-6 text-center">
-        <motion.div style={{ opacity }}>
-          <h1 className="font-serif text-5xl md:text-8xl lg:text-9xl text-white mb-8 leading-[0.9] tracking-tighter overflow-hidden">
-            {titleWords.map((word, i) => (
-              <motion.span
-                key={i}
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.2, delay: 0.8 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block mr-4 last:mr-0"
-              >
-                {word}
-              </motion.span>
-            ))}
-            <br />
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.5, delay: 1.2 }}
-              className="italic text-atlas-red font-light block mt-4"
-            >
-              Тихая роскошь
-            </motion.span>
-          </h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 1.4 }}
-            className="text-lg md:text-2xl text-white/70 max-w-3xl mx-auto mb-16 font-light tracking-wide leading-relaxed"
-          >
-            Гостинично-ресторанный комплекс 4 звезды в самом сердце города. 
-            Место, где встречаются комфорт и статус.
-          </motion.p>
-        </motion.div>
+			<div className='container relative z-10 px-6 text-center'>
+				<motion.div style={{ opacity }}>
+					<h1 className='font-serif text-5xl md:text-8xl lg:text-9xl text-white mb-8 leading-[0.9] tracking-tighter overflow-hidden'>
+						{titleWords.map((word, i) => (
+							<motion.span
+								key={i}
+								initial={{ y: "100%" }}
+								animate={{ y: 0 }}
+								transition={{
+									duration: 1.2,
+									delay: 0.8 + i * 0.1,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className='inline-block mr-4 last:mr-0'>
+								{word}
+							</motion.span>
+						))}
+						<br />
+						<motion.span
+							initial={{ opacity: 0, x: -20 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 1.5, delay: 1.2 }}
+							className='italic text-atlas-red font-light block mt-4'>
+							Тихая роскошь
+						</motion.span>
+					</h1>
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.2, delay: 1.4 }}
+						className='text-lg md:text-2xl text-white/70 max-w-3xl mx-auto mb-16 font-light tracking-wide leading-relaxed'>
+						Гостинично-ресторанный комплекс 4 звезды в самом сердце города.
+						Место, где встречаются комфорт и статус.
+					</motion.p>
+				</motion.div>
 
-        {/* Search Panel */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-5xl mx-auto glass p-3 md:p-5 rounded-3xl md:rounded-full flex flex-col md:flex-row items-center gap-6 shadow-2xl"
-        >
-          <div className="flex-1 flex items-center gap-4 px-8 py-4 border-b md:border-b-0 md:border-r border-white/10 w-full group cursor-pointer">
-            <Calendar className="text-atlas-red transition-transform group-hover:scale-110" size={24} />
-            <div className="text-left">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-black mb-1">Заезд - Выезд</p>
-              <p className="text-sm text-white font-semibold">Выбрать даты</p>
-            </div>
-          </div>
-          <div className="flex-1 flex items-center gap-4 px-8 py-4 w-full group cursor-pointer">
-            <Users className="text-atlas-red transition-transform group-hover:scale-110" size={24} />
-            <div className="text-left">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-black mb-1">Гости</p>
-              <p className="text-sm text-white font-semibold">2 Взрослых, 0 Детей</p>
-            </div>
-          </div>
-          <motion.button 
-            whileHover={{ scale: 1.02, backgroundColor: '#C41E3A' }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full md:w-auto px-12 py-5 bg-atlas-red text-white font-black rounded-full transition-all shadow-2xl uppercase tracking-widest text-sm"
-          >
-            Найти номер
-          </motion.button>
-        </motion.div>
-      </div>
+				{/* Search Panel */}
+				<motion.div
+					initial={{ opacity: 0, scale: 0.9 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 1.2, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
+					className='max-w-5xl mx-auto glass p-3 md:p-5 rounded-3xl md:rounded-full flex flex-col md:flex-row items-center gap-6 shadow-2xl'>
+					<div className='flex-1 flex items-center gap-4 px-8 py-4 border-b md:border-b-0 md:border-r border-white/10 w-full group cursor-pointer'>
+						<Calendar
+							className='text-atlas-red transition-transform group-hover:scale-110'
+							size={24}
+						/>
+						<div className='text-left'>
+							<p className='text-[10px] uppercase tracking-[0.2em] text-white/40 font-black mb-1'>
+								Заезд - Выезд
+							</p>
+							<p className='text-sm text-white font-semibold'>Выбрать даты</p>
+						</div>
+					</div>
+					<div className='flex-1 flex items-center gap-4 px-8 py-4 w-full group cursor-pointer'>
+						<Users
+							className='text-atlas-red transition-transform group-hover:scale-110'
+							size={24}
+						/>
+						<div className='text-left'>
+							<p className='text-[10px] uppercase tracking-[0.2em] text-white/40 font-black mb-1'>
+								Гости
+							</p>
+							<p className='text-sm text-white font-semibold'>
+								2 Взрослых, 0 Детей
+							</p>
+						</div>
+					</div>
+					<motion.button
+						whileHover={{ scale: 1.02, backgroundColor: "#C41E3A" }}
+						whileTap={{ scale: 0.98 }}
+						className='w-full md:w-auto px-12 py-5 bg-atlas-red text-white font-black rounded-full transition-all shadow-2xl uppercase tracking-widest text-sm'>
+						Найти номер
+					</motion.button>
+				</motion.div>
+			</div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        animate={{ y: [0, 15, 0] }}
-        transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
-      >
-        <span className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">Scroll</span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-atlas-red to-transparent" />
-      </motion.div>
-    </section>
-  );
+			{/* Scroll Indicator */}
+			<motion.div
+				animate={{ y: [0, 15, 0] }}
+				transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+				className='absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4'>
+				<span className='text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold'>
+					Scroll
+				</span>
+				<div className='w-[1px] h-16 bg-gradient-to-b from-atlas-red to-transparent' />
+			</motion.div>
+		</section>
+	)
 };
 
 const About = () => {
