@@ -54,7 +54,7 @@ const Preloader = () => {
 				transition={{ duration: 1, ease: "easeOut" }}
 				className='relative w-48 h-48 mb-12'>
 				<Image
-					src='/logon.gif'
+					src='/logo.png'
 					alt='Atlas Logo'
 					fill
 					className='object-contain brightness-0 invert'
@@ -310,73 +310,90 @@ const About = () => {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 5]);
 
   return (
-    <section id="about" ref={containerRef} className="py-32 md:py-48 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="text-atlas-red font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">О гостинице</span>
-            <h2 className="font-serif text-5xl md:text-7xl mb-12 leading-[1.1] tracking-tight">
-              Традиции <br /> гостеприимства
-            </h2>
-            <div className="space-y-8 text-zinc-500 leading-relaxed text-xl font-light">
-              <p>
-                Атлас Донецк – отель, который соответствует всем международным стандартам и предлагающий полный набор услуг для полноценного отдыха и эффективной работы: 165 комфортабельных номеров, рестораны, в том числе открытая терраса, лаунж бар, спа и фитнес комплекс с бассейном, салон красоты, комнаты переговоров, конференц и банкетные залы.
-              </p>
-              <p className="italic font-serif text-zinc-800">
-                &quot;Мы гордимся отзывами, которые оставляют о нашем комплексе гости, и всегда оперативно реагируем на все пожелания.&quot;
-              </p>
-            </div>
-            
-            <div className="mt-16 flex flex-wrap gap-8">
-              <motion.div 
-                whileHover={{ y: -5 }}
-                className="flex items-center gap-4 bg-zinc-50 px-8 py-6 rounded-2xl border border-zinc-100 shadow-sm"
-              >
-                <Star className="text-atlas-red" fill="currentColor" size={24} />
-                <div>
-                  <p className="font-bold text-sm">TripAdvisor Top 20</p>
-                  <p className="text-[10px] uppercase tracking-widest text-zinc-400">Award 2013</p>
-                </div>
-              </motion.div>
-              <motion.div 
-                whileHover={{ y: -5 }}
-                className="flex items-center gap-4 bg-zinc-50 px-8 py-6 rounded-2xl border border-zinc-100 shadow-sm"
-              >
-                <Sparkles className="text-atlas-red" size={24} />
-                <div>
-                  <p className="font-bold text-sm">Best Hotel Spa</p>
-                  <p className="text-[10px] uppercase tracking-widest text-zinc-400">Hospitality Awards</p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+		<section
+			id='about'
+			ref={containerRef}
+			className='py-32 md:py-48 bg-white overflow-hidden'>
+			<div className='container mx-auto px-6'>
+				<div className='grid lg:grid-cols-2 gap-24 items-center'>
+					<motion.div
+						initial={{ opacity: 0, x: -50 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}>
+						<span className='text-atlas-red font-black tracking-[0.3em] uppercase text-[10px] mb-6 block'>
+							О гостинице
+						</span>
+						<h2 className='font-serif text-5xl md:text-7xl mb-12 leading-[1.1] tracking-tight'>
+							Традиции <br /> гостеприимства
+						</h2>
+						<div className='space-y-8 text-zinc-500 leading-relaxed text-xl font-light'>
+							<p>
+								Атлас Донецк – отель, который соответствует всем международным
+								стандартам и предлагающий полный набор услуг для полноценного
+								отдыха и эффективной работы: 165 комфортабельных номеров,
+								рестораны, в том числе открытая терраса, лаунж бар, спа и фитнес
+								комплекс с бассейном, салон красоты, комнаты переговоров,
+								конференц и банкетные залы.
+							</p>
+							<p className='italic font-serif text-zinc-800'>
+								&quot;Мы гордимся отзывами, которые оставляют о нашем комплексе
+								гости, и всегда оперативно реагируем на все пожелания.&quot;
+							</p>
+						</div>
 
-          <motion.div
-            style={{ y, rotate }}
-            className="relative aspect-[3/4] rounded-[40px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]"
-          >
-            <Image 
-              src="/hotel.jpg" 
-              alt="Atlas Hotel Exterior" 
-              fill 
-              className="object-cover scale-110"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-12 left-12 text-white">
-              <p className="text-6xl font-serif italic mb-2">4*</p>
-              <p className="text-xs uppercase tracking-[0.4em] font-bold opacity-60">Premium Experience</p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+						<div className='mt-16 flex flex-wrap gap-8'>
+							<motion.div
+								whileHover={{ y: -5 }}
+								className='flex items-center gap-4 bg-zinc-50 px-8 py-6 rounded-2xl border border-zinc-100 shadow-sm'>
+								<Star
+									className='text-atlas-red'
+									fill='currentColor'
+									size={24}
+								/>
+								<div>
+									<p className='font-bold text-sm'>TripAdvisor Top 20</p>
+									<p className='text-[10px] uppercase tracking-widest text-zinc-400'>
+										Award 2013
+									</p>
+								</div>
+							</motion.div>
+							<motion.div
+								whileHover={{ y: -5 }}
+								className='flex items-center gap-4 bg-zinc-50 px-8 py-6 rounded-2xl border border-zinc-100 shadow-sm'>
+								<Sparkles className='text-atlas-red' size={24} />
+								<div>
+									<p className='font-bold text-sm'>Best Hotel Spa</p>
+									<p className='text-[10px] uppercase tracking-widest text-zinc-400'>
+										Hospitality Awards
+									</p>
+								</div>
+							</motion.div>
+						</div>
+					</motion.div>
+
+					<motion.div
+						style={{ y, rotate }}
+						className='relative aspect-[3/4] rounded-[40px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]'>
+						<Image
+							src='/hotels.jpg'
+							alt='Atlas Hotel Exterior'
+							fill
+							className='object-cover scale-110'
+							referrerPolicy='no-referrer'
+						/>
+						<div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent' />
+						<div className='absolute bottom-12 left-12 text-white'>
+							<p className='text-6xl font-serif italic mb-2'>4*</p>
+							<p className='text-xs uppercase tracking-[0.4em] font-bold opacity-60'>
+								Premium Experience
+							</p>
+						</div>
+					</motion.div>
+				</div>
+			</div>
+		</section>
+	)
 };
 
 const Infrastructure = () => {
@@ -574,80 +591,101 @@ const Rooms = () => {
 
 const Footer = () => {
   return (
-    <footer id="contacts" className="bg-zinc-950 text-white pt-32 pb-16">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32">
-          <div className="col-span-1 lg:col-span-1">
-            <div className="relative w-48 h-20 mb-10">
-              <Image 
-                src="/hotel-logo.png" 
-                alt="Atlas Logo" 
-                fill 
-                className="object-contain brightness-0 invert"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <p className="text-white/40 font-light leading-relaxed text-lg">
-              Премиальный гостинично-ресторанный комплекс в центре Донецка. Идеальное место для отдыха и бизнеса.
-            </p>
-          </div>
+		<footer id='contacts' className='bg-zinc-950 text-white pt-32 pb-16'>
+			<div className='container mx-auto px-6'>
+				<div className='grid md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32'>
+					<div className='col-span-1 lg:col-span-1'>
+						<div className='relative w-48 h-20 mb-10'>
+							<Image
+								src='/logo.png'
+								alt='Atlas Logo'
+								fill
+								className='object-contain brightness-0 invert'
+								referrerPolicy='no-referrer'
+							/>
+						</div>
+						<p className='text-white/40 font-light leading-relaxed text-lg'>
+							Премиальный гостинично-ресторанный комплекс в центре Донецка.
+							Идеальное место для отдыха и бизнеса.
+						</p>
+					</div>
 
-          <div>
-            <h4 className="font-serif text-2xl mb-10">Навигация</h4>
-            <ul className="space-y-5 text-white/50 font-light text-lg">
-              <li><a href="#about" className="hover:text-atlas-red transition-colors">О нас</a></li>
-              <li><a href="#infrastructure" className="hover:text-atlas-red transition-colors">Инфраструктура</a></li>
-              <li><a href="#rooms" className="hover:text-atlas-red transition-colors">Номера</a></li>
-              <li><a href="#" className="hover:text-atlas-red transition-colors">Бронирование</a></li>
-            </ul>
-          </div>
+					<div>
+						<h4 className='font-serif text-2xl mb-10'>Навигация</h4>
+						<ul className='space-y-5 text-white/50 font-light text-lg'>
+							<li>
+								<a
+									href='#about'
+									className='hover:text-atlas-red transition-colors'>
+									О нас
+								</a>
+							</li>
+							<li>
+								<a
+									href='#infrastructure'
+									className='hover:text-atlas-red transition-colors'>
+									Инфраструктура
+								</a>
+							</li>
+							<li>
+								<a
+									href='#rooms'
+									className='hover:text-atlas-red transition-colors'>
+									Номера
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-atlas-red transition-colors'>
+									Бронирование
+								</a>
+							</li>
+						</ul>
+					</div>
 
-          <div>
-            <h4 className="font-serif text-2xl mb-10">Контакты</h4>
-            <ul className="space-y-8 text-white/50 font-light text-lg">
-              <li className="flex items-start gap-5">
-                <MapPin className="text-atlas-red shrink-0 mt-1" size={24} />
-                <span>г. Донецк, набережная р. Кальмиус, центр</span>
-              </li>
-              <li className="flex items-center gap-5">
-                <Phone className="text-atlas-red shrink-0" size={24} />
-                <span>+7 (XXX) XXX-XX-XX</span>
-              </li>
-              <li className="flex items-center gap-5">
-                <Mail className="text-atlas-red shrink-0" size={24} />
-                <span>info@atlas-hotel.com</span>
-              </li>
-            </ul>
-          </div>
+					<div>
+						<h4 className='font-serif text-2xl mb-10'>Контакты</h4>
+						<ul className='space-y-8 text-white/50 font-light text-lg'>
+							<li className='flex items-start gap-5'>
+								<MapPin className='text-atlas-red shrink-0 mt-1' size={24} />
+								<span>г. Донецк, набережная р. Кальмиус, центр</span>
+							</li>
+							<li className='flex items-center gap-5'>
+								<Phone className='text-atlas-red shrink-0' size={24} />
+								<span>+7 (XXX) XXX-XX-XX</span>
+							</li>
+							<li className='flex items-center gap-5'>
+								<Mail className='text-atlas-red shrink-0' size={24} />
+								<span>info@atlas-hotel.com</span>
+							</li>
+						</ul>
+					</div>
 
-          <div>
-            <h4 className="font-serif text-2xl mb-10">Соцсети</h4>
-            <div className="flex gap-6">
-              <motion.a 
-                whileHover={{ y: -5, backgroundColor: '#E60000' }}
-                href="#" 
-                className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center transition-all"
-              >
-                <Instagram size={24} />
-              </motion.a>
-              <motion.a 
-                whileHover={{ y: -5, backgroundColor: '#E60000' }}
-                href="#" 
-                className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center transition-all"
-              >
-                <Facebook size={24} />
-              </motion.a>
-            </div>
-          </div>
-        </div>
+					<div>
+						<h4 className='font-serif text-2xl mb-10'>Соцсети</h4>
+						<div className='flex gap-6'>
+							<motion.a
+								whileHover={{ y: -5, backgroundColor: "#E60000" }}
+								href='#'
+								className='w-14 h-14 rounded-full border border-white/10 flex items-center justify-center transition-all'>
+								<Instagram size={24} />
+							</motion.a>
+							<motion.a
+								whileHover={{ y: -5, backgroundColor: "#E60000" }}
+								href='#'
+								className='w-14 h-14 rounded-full border border-white/10 flex items-center justify-center transition-all'>
+								<Facebook size={24} />
+							</motion.a>
+						</div>
+					</div>
+				</div>
 
-        <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-white/20 text-[10px] uppercase tracking-[0.4em] font-bold">
-          <p>© 2025 Атлас Донецк. Все права защищены.</p>
-          <p>Design by ITVash</p>
-        </div>
-      </div>
-    </footer>
-  );
+				<div className='pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-white/20 text-[10px] uppercase tracking-[0.4em] font-bold'>
+					<p>© 2025 Атлас Донецк. Все права защищены.</p>
+					<p>Design by ITVash</p>
+				</div>
+			</div>
+		</footer>
+	)
 };
 
 // --- Main Page ---
