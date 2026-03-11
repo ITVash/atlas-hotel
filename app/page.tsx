@@ -43,39 +43,37 @@ const Preloader = () => {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-zinc-950"
-    >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="relative w-48 h-48 mb-12"
-      >
-        <Image 
-          src="/hotel-logo.png" 
-          alt="Atlas Logo" 
-          fill 
-          className="object-contain brightness-0 invert"
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
-      
-      <div className="w-64 h-[1px] bg-white/10 relative overflow-hidden">
-        <motion.div 
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          className="absolute inset-y-0 left-0 bg-atlas-red"
-        />
-      </div>
-      <div className="mt-4 text-[10px] uppercase tracking-[0.5em] text-white/40 font-black">
-        {progress}%
-      </div>
-    </motion.div>
-  );
+		<motion.div
+			initial={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+			className='fixed inset-0 z-[100] flex flex-col items-center justify-center bg-zinc-950'>
+			<motion.div
+				initial={{ scale: 0.8, opacity: 0 }}
+				animate={{ scale: 1, opacity: 1 }}
+				transition={{ duration: 1, ease: "easeOut" }}
+				className='relative w-48 h-48 mb-12'>
+				<Image
+					src='/logon.gif'
+					alt='Atlas Logo'
+					fill
+					className='object-contain brightness-0 invert'
+					referrerPolicy='no-referrer'
+				/>
+			</motion.div>
+
+			<div className='w-64 h-[1px] bg-white/10 relative overflow-hidden'>
+				<motion.div
+					initial={{ width: 0 }}
+					animate={{ width: `${progress}%` }}
+					className='absolute inset-y-0 left-0 bg-atlas-red'
+				/>
+			</div>
+			<div className='mt-4 text-[10px] uppercase tracking-[0.5em] text-white/40 font-black'>
+				{progress}%
+			</div>
+		</motion.div>
+	)
 };
 
 const Header = () => {
