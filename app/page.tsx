@@ -376,7 +376,7 @@ const About = () => {
 						style={{ y, rotate }}
 						className='relative aspect-[3/4] rounded-[40px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]'>
 						<Image
-							src='/hotels.jpg'
+							src='/hotels.png'
 							alt='Atlas Hotel Exterior'
 							fill
 							className='object-cover scale-110'
@@ -398,44 +398,44 @@ const About = () => {
 
 const Infrastructure = () => {
   const items = [
-    {
-      title: 'Atlas Fitness',
-      desc: 'Фитнес-центр мирового уровня с бассейном',
-      logo: '/fitnes.png',
-      size: 'col-span-12 md:col-span-8 h-[500px]',
-      bg: 'bg-zinc-950',
-      icon: <Dumbbell className="text-atlas-red" size={40} />
-    },
-    {
-      title: 'Рестораны',
-      desc: '3 ресторана, терраса и лаунж-бар',
-      logo: '/restaurant-logo.png',
-      size: 'col-span-12 md:col-span-4 h-[500px]',
-      bg: 'bg-atlas-red',
-      icon: <Utensils className="text-white" size={40} />
-    },
-    {
-      title: 'SPA & Wellness',
-      desc: 'Полное расслабление и уход',
-      size: 'col-span-12 md:col-span-4 h-[350px]',
-      bg: 'bg-zinc-100',
-      icon: <Waves className="text-atlas-red" size={40} />
-    },
-    {
-      title: 'Конференц-залы',
-      desc: 'Для ваших деловых встреч',
-      size: 'col-span-12 md:col-span-4 h-[350px]',
-      bg: 'bg-zinc-100',
-      icon: <Briefcase className="text-atlas-red" size={40} />
-    },
-    {
-      title: 'Салон красоты',
-      desc: 'Профессиональный сервис',
-      size: 'col-span-12 md:col-span-4 h-[350px]',
-      bg: 'bg-zinc-100',
-      icon: <Sparkles className="text-atlas-red" size={40} />
-    }
-  ];
+		{
+			title: "Atlas Fitness",
+			desc: "Фитнес-центр мирового уровня с бассейном",
+			logo: "/fitness-logo.png",
+			size: "col-span-12 md:col-span-8 h-[500px]",
+			bg: "bg-zinc-950",
+			icon: <Dumbbell className='text-atlas-red' size={40} />,
+		},
+		{
+			title: "Рестораны",
+			desc: "3 ресторана, терраса и лаунж-бар",
+			logo: "/restaurant-logo.png",
+			size: "col-span-12 md:col-span-4 h-[500px]",
+			bg: "bg-atlas-red",
+			icon: <Utensils className='text-white' size={40} />,
+		},
+		{
+			title: "SPA & Wellness",
+			desc: "Полное расслабление и уход",
+			size: "col-span-12 md:col-span-4 h-[350px]",
+			bg: "bg-zinc-100",
+			icon: <Waves className='text-atlas-red' size={40} />,
+		},
+		{
+			title: "Конференц-залы",
+			desc: "Для ваших деловых встреч",
+			size: "col-span-12 md:col-span-4 h-[350px]",
+			bg: "bg-zinc-100",
+			icon: <Briefcase className='text-atlas-red' size={40} />,
+		},
+		{
+			title: "Салон красоты",
+			desc: "Профессиональный сервис",
+			size: "col-span-12 md:col-span-4 h-[350px]",
+			bg: "bg-zinc-100",
+			icon: <Sparkles className='text-atlas-red' size={40} />,
+		},
+	]
 
   return (
     <section id="infrastructure" className="py-32 md:py-48 bg-zinc-50">
@@ -597,7 +597,7 @@ const Footer = () => {
 					<div className='col-span-1 lg:col-span-1'>
 						<div className='relative w-48 h-20 mb-10'>
 							<Image
-								src='/logo.png'
+								src='/logon.gif'
 								alt='Atlas Logo'
 								fill
 								className='object-contain brightness-0 invert'
