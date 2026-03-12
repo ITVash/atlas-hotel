@@ -204,7 +204,7 @@ const Hero = () => {
 					muted
 					playsInline
 					className='w-full h-full object-cover'
-					src='/bg-video.webm'
+					src='/hotel-hero.webm'
 				/>
 				<div className='absolute inset-0 bg-black/40 bg-gradient-to-b from-black/20 via-transparent to-black/60' />
 			</motion.div>
