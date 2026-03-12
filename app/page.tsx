@@ -681,7 +681,11 @@ const Footer = () => {
 
 				<div className='pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-white/20 text-[10px] uppercase tracking-[0.4em] font-bold'>
 					<p>© 2025 Атлас Донецк. Все права защищены.</p>
-					<p>Design by ITVash</p>
+					<motion.p
+						className='cursor-pointer'
+						whileHover={{ x: 10, color: "#C41E3A" }}>
+						Design by ITVash
+					</motion.p>
 				</div>
 			</div>
 		</footer>
